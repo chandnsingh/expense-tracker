@@ -1,0 +1,105 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(122, 177, 169);
+    font-family: Arial, sans-serif; 
+    color: #292828;
+}
+.container{
+    border-radius: 14px;
+    background-color: rgb(237, 238, 238);
+    width: 30rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 5%;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.3);
+}
+.heading{
+    text-align: center;
+    padding: 1.5rem;
+   
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: .2rem;
+}
+
+input{
+   margin-bottom: .95rem;
+    outline: none;
+    border: .5px solid rgb(113, 120, 126);
+    border-radius: 10px;
+    padding: .5rem .4rem .5rem .4rem;
+}
+.btn{
+    display: flex;
+    gap: 15px;
+}
+
+form .add ,.clear{
+    width: 80px;
+    margin-top: .8rem;
+    padding: .5rem .15rem .5rem .15rem;
+    border-radius: 8px;
+    background-color: rgb(47, 68, 252);
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+form button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.grey{
+    background-color: rgb(238, 236, 236);
+    border-radius: 10px;
+    padding: .2rem .8rem .8rem .8rem;
+}
+.pitem{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+.items{
+    margin-top: .8rem;
+    font-size: 1.24rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.delete button {
+    outline: none;
+    border: none;
+    margin-top: 13px;
+    transition: transform 0.3s ease;
+}
+.delete button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.total{
+    text-align: center;
+    margin-top: .8rem;
+    font-size: 1.6rem;
+
+}
+
+@media (max-width : 400px){
+    .container{
+        width: 22rem;
+        padding: 1rem;
+        margin-top: 13%;
+        
+    }
+}

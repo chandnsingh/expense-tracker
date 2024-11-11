@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="container">
+    <h1 class="heading">Expense Tracker</h1>
+        <form action="/add" method="post">
+            <label for="item">Item Name:</label>
+           <input type="text" name="item" id="item" placeholder="Enter the name" spellcheck="true" autocomplete="off" autocorrect="on" required>
+            <label for="price">Item Price:</label>
+           <input type="number" step="0.01" name="price" id="price" placeholder="Enter the price"  autocomplete="off" required>
+           <div class="btn">
+            <button class="add" type="submit">Add Item</button>
+        </form>
+        <form action="/clear" method="post">
+            <button class="clear" type="submit">Clear All</button>
+        </form>
+           </div>
+          
+        <div class="grey">
+                <% result.forEach(item => {  %>
+                    <div class="pitem">
+                    <p class="items"><%=item.items%>: ₹<%= item.price %></p>
+                    <form class="delete" action="/delete" method="post">
+                        <input type="hidden"  name="id" value="<%= item.id %>">
+                        <button type="submit"><img src="../images/delete-svgrepo-com.svg" alt="delete-svgrepo-com" width="20px"></button>
+                        
+                    </form>
+                   
+                    </div>
+        <%  }); %>
+        </div>
+        
+       <% if (locals.price) { %>
+        <h1 class="total">Total price: ₹<%=price %></h1>
+       <% } else { %>
+          <h1 class="total">Total price:</h1>
+        <%  } %>
+   
+    </div>
+    <script>
+        const dnumber = document.getElementById("price")
+        dnumber.addEventListener("blur", () => {
+    // Convert the value to a float and then format it to 2 decimal places
+    dnumber.value = parseFloat(dnumber.value).toFixed(2);
+  });
+    </script>
+</body>
+</html>
