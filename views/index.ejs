@@ -28,10 +28,8 @@
                     <p class="items"><%=item.items%>: ₹<%= item.price %></p>
                     <form class="delete" action="/delete" method="post">
                         <input type="hidden"  name="id" value="<%= item.id %>">
-                        <button type="submit"><img src="../images/delete-svgrepo-com.svg" alt="delete-svgrepo-com" width="20px"></button>
-                        
+                        <button type="submit"><img src="../images/delete-svgrepo-com.svg" alt="delete-svgrepo-com" width="20px"></button>   
                     </form>
-                   
                     </div>
         <%  }); %>
         </div>
