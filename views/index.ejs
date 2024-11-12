@@ -22,8 +22,9 @@
         </form>
            </div>
           
-        <div class="grey">
+        <div class="containers">
                 <% result.forEach(item => {  %>
+                    <div class="grey">
                     <div class="pitem">
                     <p class="items"><%=item.items%>: ₹<%= item.price %></p>
                     <form class="delete" action="/delete" method="post">
@@ -31,8 +32,10 @@
                         <button type="submit"><img src="../images/delete-svgrepo-com.svg" alt="delete-svgrepo-com" width="20px"></button>   
                     </form>
                     </div>
+                </div>
         <%  }); %>
-        </div>
+    </div>
+      
         
        <% if (locals.price) { %>
         <h1 class="total">Total price: ₹<%=price %></h1>
