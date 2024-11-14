@@ -4,25 +4,17 @@ import pg from "pg"
 import dotenv from 'dotenv';
 dotenv.config()
 
-// Import the Pool class from pg
-import pkg from 'pg';
-const { Pool } = pkg;
-
-// Configure the connection pool
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false, // Necessary for some cloud-hosted Postgres services
-    },
-  });
-
 // configuring the db 
 const db = new pg.Client({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  ssl: {
+    rejectUnauthorized: false, // Required for Render PostgreSQL connections
+  }
+
 });
 db.connect()
   .then(() => console.log("Connected to PostgreSQL database"))
